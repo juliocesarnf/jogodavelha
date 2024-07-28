@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1 class="title">Jogo da Velha</h1>
+    <div class="board">
+        <div id="cell-1" class="board-cell" onclick="newMove(0)"></div>
+        <div id="cell-2" class="board-cell" onclick="newMove(1)"></div>
+        <div id="cell-3" class="board-cell" onclick="newMove(2)"></div>
+        <div id="cell-4" class="board-cell" onclick="newMove(3)"></div>
+        <div id="cell-5" class="board-cell" onclick="newMove(4)"></div>
+        <div id="cell-6" class="board-cell" onclick="newMove(5)"></div>
+        <div id="cell-7" class="board-cell" onclick="newMove(6)"></div>
+        <div id="cell-8" class="board-cell" onclick="newMove(7)"></div>
+        <div id="cell-9" class="board-cell" onclick="newMove(8)"></div>
+    </div>
+    <h2 class="currentPlayer">JOGADOR DA VEZ: X</h2>
+    <div class="endGame">
+        <Strong class="endGame-msg"></Strong>
+        <button class="endGame-restart" onclick="restartGame()">Reiniciar</button>
+    </div>
+</body>
+</html>

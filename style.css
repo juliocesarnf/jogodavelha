@@ -1,0 +1,183 @@
+/* Corpo */
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#197d7c, #00f7c6);
+}
+
+
+
+/* Titulo */
+
+.title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+
+
+
+/* Quadro */
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 0px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Célula */
+
+.board-cell{
+    width: 120px;
+    height: 120px;
+    border: 4px solid #333;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+/* Bordas */
+
+#cell-1, #cell-2, #cell-3{
+    border-top: 0;
+}
+
+#cell-3, #cell-6, #cell-9{
+    border-right: 0;
+}
+
+#cell-7, #cell-8, #cell-9{
+    border-bottom: 0;
+}
+
+#cell-1, #cell-4, #cell-7{
+    border-left: 0;
+}
+
+
+
+/* X */
+
+.board-cell.x::before, .board-cell.x::after{
+    content: "";
+    height: 10px;
+    width: 100px;
+    background: #000;
+    position: absolute;
+}
+
+.board-cell.x::before{
+    transform: rotate(45deg);
+}
+
+.board-cell.x::after{
+    transform: rotate(-45deg);
+}
+
+
+
+/* Circulo */
+
+.board-cell.circle::before, .board-cell.circle::after{
+    content: "";
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    border: 9px solid #000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+
+/* Cursor bloqueado */
+
+.board-cell.x, .board-cell.circle{
+    cursor: not-allowed;
+}
+
+
+
+/* Jogador da vez */
+
+.currentPlayer{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    height: 100px;
+    margin: 20px 0 0;
+}
+
+
+
+/* Fim de jogo */
+
+.endGame{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    margin: 20px 0 0;
+}
+
+.endGame-msg{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+
+.endGame-restart{
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #127d7c;
+}
+
+.endGame-restart:hover{
+    background-color: #12ad7c;
+}
+
+/* Responsivo */
+@media screen and (max-width: 480px) {
+    .title{
+        font-size: 40px;
+    }
+
+    .board-cell{
+        width: 100px;
+        height: 100px;
+        border: 2px solid #333;
+    }
+
+    .board-cell.x::before, .board-cell.x::after{
+        width: 10px;
+        height: 80px;
+    }
+
+    .board-cell.circle::before, .board-cell.circle::after{
+        height: 54px;
+        width: 54px;
+        border: 9px solid #000;
+    }
+
+    .currentPlayer{
+        font-size: 30px;
+    }
+  }
+
